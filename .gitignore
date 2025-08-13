@@ -1,0 +1,33 @@
+# Visual Studio cache folders
+/*.vs/*
+.vscode/
+
+# Build output
+bin/
+obj/
+
+# Temporary user-specific files
+*.user
+*.suo
+*.db
+*.log
+
+# Orchard Core generated folders
+App_Data/
+wwwroot/lib/
+node_modules/
+
+# Environment variables
+.env
+
+# Localization files (if generated)
+**/Localization/
+**/Localization/**
+/Localization
+App_Data/
+wwwroot/lib/
+
+# Ignore node_modules in any folder
+**/node_modules/
+src/Sohan.Client.Theme/node_modules
+src/Sohan.Admin.Theme/node_modules

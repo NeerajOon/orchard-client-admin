@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Client</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    @await RenderSectionAsync("HeadMeta", required: false)
+    <resources type="Meta" />
+    <style asp-name="font-awesome" version="6.6.0" />
+    <style asp-name="bootstrap" version="5.3.3" />
+    <resources type="Stylesheet" />
+    <resources type="Header" />
+</head>
+@{
+        var currentPath = Context.Request.Path.Value?.Trim('/').ToLower();
+}
+
+<body class="index-page">
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top">
+            <div class="container">
+                <!-- Brand / Logo -->
+                <a class="navbar-brand fw-bold" href="/">
+                    <i class="fa-solid fa-leaf me-2"></i> Client Name
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                      
+                        <li class="nav-item">
+                            <a class="nav-link @(currentPath == "" ? "active" : "")" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(currentPath == "about" ? "active" : "")" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(currentPath == "services" ? "active" : "")" href="/services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(currentPath == "contact" ? "active" : "")" href="/contact">Contact</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- Call-to-Action Button -->
+                    <a href="#" class="btn btn-warning ms-lg-3 mt-2 mt-lg-0">
+                        Get Started
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content container">
+        @await RenderBodyAsync()
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-light pt-5 pb-3 mt-auto">
+        <div class="container">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-md-4 mb-3">
+                    <h5>About Us</h5>
+                    <p>
+                        We provide innovative and reliable solutions for our clients.
+                        Your success is our priority.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4 mb-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Home</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">About</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Services</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div class="col-md-4 mb-3">
+                    <h5>Follow Us</h5>
+                    <a href="#" class="text-light me-3"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                    <a href="#" class="text-light me-3"><i class="fa-brands fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-light me-3"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-light"><i class="fa-brands fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+
+            <hr class="border-secondary" />
+            <div class="text-center small">
+                &copy; @DateTime.UtcNow.Year Client Company. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <resources type="FootScript" />
+</body>
+
+</html>

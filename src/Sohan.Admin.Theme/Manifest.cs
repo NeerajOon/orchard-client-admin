@@ -1,5 +1,4 @@
 using OrchardCore.DisplayManagement.Manifest;
-using OrchardCore.Modules.Manifest;
 
 [assembly: Theme(
     Name = "The Sohan Theme",
@@ -7,12 +6,12 @@ using OrchardCore.Modules.Manifest;
     Website = "https://sohan.com",
     Version = "1.0.0",
     Description = "The Sohan Admin theme.",
-    Dependencies = 
-    [
-        "OrchardCore.Themes",
-    ],
-    Tags =
-    [
-        ManifestConstants.AdminTag,
-    ]
+	 Dependencies =
+	[
+		"OrchardCore.Themes",
+	],
+	Tags =
+	[
+		"Admin",
+	]
 )]

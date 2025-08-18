@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sohan.Client.Theme", "src\S
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sohan.Modules", "Sohan.Modules", "{92F51C50-25AA-4F04-BB4A-46CBA3989C82}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sohan.User", "src\Sohan.User\Sohan.User.csproj", "{76CA8399-392D-46FE-9457-C678643120D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6E6BB283-7338-453B-8EF6-8B914883B335}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E6BB283-7338-453B-8EF6-8B914883B335}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E6BB283-7338-453B-8EF6-8B914883B335}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76CA8399-392D-46FE-9457-C678643120D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76CA8399-392D-46FE-9457-C678643120D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76CA8399-392D-46FE-9457-C678643120D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76CA8399-392D-46FE-9457-C678643120D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +49,7 @@ Global
 		{132EF392-9B5D-4B91-A98D-75A0C7F62A9F} = {CCCD8DF8-B4A5-4D87-85EF-5D1C982F341A}
 		{6E6BB283-7338-453B-8EF6-8B914883B335} = {CCCD8DF8-B4A5-4D87-85EF-5D1C982F341A}
 		{92F51C50-25AA-4F04-BB4A-46CBA3989C82} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{76CA8399-392D-46FE-9457-C678643120D9} = {92F51C50-25AA-4F04-BB4A-46CBA3989C82}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D3C45001-10FC-4697-95CF-F8158E465F43}

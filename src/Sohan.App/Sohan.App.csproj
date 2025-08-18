@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Sohan.Admin.Theme\Sohan.Admin.Theme.csproj" />
     <ProjectReference Include="..\Sohan.Client.Theme\Sohan.Client.Theme.csproj" />
+    <ProjectReference Include="..\Sohan.User\Sohan.User.csproj" />
   </ItemGroup>
 
 </Project>

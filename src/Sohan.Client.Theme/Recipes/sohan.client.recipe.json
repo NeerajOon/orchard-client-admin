@@ -382,7 +382,7 @@
           "Author": "admin",
           "LandingPage": {},
           "AutoroutePart": {
-            "SetHomepage": false,
+            "SetHomepage": true,
             "Disabled": false,
             "RouteContainedItems": false,
             "Absolute": false,

@@ -1,21 +1,28 @@
 var builder = WebApplication.CreateBuilder(args);
 
-// Orchard Core + AutoSetup
-builder.Services
-	.AddOrchardCms()
-	.AddSetupFeatures("OrchardCore.AutoSetup");
+//builder.Logging.ClearProviders();
+//builder.Host.UseNLogHost();
+
+var configuration = builder.Configuration;
+
+// Register ConfigurationManager instance
+builder.Services.AddSingleton(configuration).AddOrchardCms();
 
 var app = builder.Build();
 
-// Orchard Core pipeline
 if (!app.Environment.IsDevelopment())
 {
 	app.UseExceptionHandler("/Error");
-	app.UseHsts();
 }
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
 app.UseOrchardCore();
 
-app.Run();
+await app.RunAsync();
+
+public partial class Program
+{
+	protected Program()
+	{
+		// Nothing to do here.
+	}
+}

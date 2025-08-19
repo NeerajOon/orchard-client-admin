@@ -18,28 +18,34 @@ public class CustomerHelper(ISession session) : ICustomerHelper
 			Name = model.Name,
 			Email = model.Email,
 			Username = model.Username,
-			Password =  model.Password,
+			Password = model.Password,
 		};
 
 		await _session.SaveAsync(customer);
 		return customer;
 	}
 
-	public async Task<CustomerIndex> UserLoginAsync(UserLoginModel modal)
+	public async Task<UserViewModel> UserLoginAsync(UserLoginModel modal)
 	{
 		if (modal?.Name == null || modal.Password == null)
 			return null;
 
 		var customer = await _session.QueryIndex<CustomerIndex>()
-	   .Where(x => x.Username == modal.Name || x.Email == modal.Name)
+	   .Where(x => (x.Username == modal.Name || x.Email == modal.Name))
 	   .FirstOrDefaultAsync();
 
 		if (customer == null)
 			return null;
+		var user = new UserViewModel
+		{
+			Name = customer.Name,
+			Username = customer.Username,
+			Email = customer.Email,
+		};
 
 		// Verify password
 		//var result = _passwordHasher.VerifyHashedPassword(customer, customer.Password, modal.Password);
 
-		return customer;
+		return user;
 	}
 }

@@ -4,7 +4,6 @@ $(document).ready(function () {
         e.preventDefault();
 
         if (!$("#userloginForm").valid()) return;
-
         var formData = {
             Name: $("#usernameEmail").val(),
             Password: $("#password").val()
@@ -16,12 +15,14 @@ $(document).ready(function () {
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(formData),
+            credentials: "include",
             headers: {
                 'RequestVerificationToken': token
             },
             success: function (response) {
                 console.log(" Success:", response);
                 alert("Login successful!");
+                window.location.href = "/Profile";
             },
             error: function (xhr) {
                 console.error(" Error:", xhr.responseText);
@@ -46,12 +47,7 @@ $(document).ready(function () {
             ConfirmPassword: $("#confirmPassword").val()
         };
 
-        console.log("-=-=-=-formData--=-=-=", JSON.stringify(formData))
-
         var token = $('input[name="__RequestVerificationToken"]').val();
-
-
-
         $.ajax({
             url: '/api/User/register',
             type: 'POST',
@@ -72,3 +68,21 @@ $(document).ready(function () {
         });
     });
 });
+var user = {
+
+    get: function () {
+        $.ajax({
+            url: '/api/User/profile',
+            type: "GET",
+            contentType: 'application/json',
+            success: function (response) {
+                console.log("Success:", response);
+                alert("data get!");
+            },
+            error: function (xhr) {
+                console.error("Error:", xhr.responseText);
+                alert("Failed. Please try again.");
+            }
+        })
+    }
+}

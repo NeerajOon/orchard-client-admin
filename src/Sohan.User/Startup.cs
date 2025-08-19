@@ -6,7 +6,6 @@ using OrchardCore.Modules;
 using OrchardCore.ResourceManagement;
 using Sohan.User.Helpers;
 using Sohan.User.Indexes;
-
 namespace Sohan.User;
 
 public class Startup : StartupBase
@@ -14,6 +13,7 @@ public class Startup : StartupBase
 	public override void ConfigureServices(IServiceCollection services)
 	{
 
+		// Db and index helpers
 		services.AddDataMigration<Migrations>();
 		services.AddIndexProvider<CustomerIndexProvider>();
 		services.AddScoped<ICustomerHelper, CustomerHelper>();

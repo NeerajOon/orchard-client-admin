@@ -26,4 +26,13 @@ public class UserController : Controller
 		return View(model);
 	}
 
+	[HttpGet("Profile")]
+	public IActionResult Profile()
+	{
+		var model = new UserViewModel
+		{
+		};
+		return View(model);
+	}
+
 }

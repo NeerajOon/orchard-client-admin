@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     $("#userloginForm").validate({
         rules: {
             usernameEmail: {

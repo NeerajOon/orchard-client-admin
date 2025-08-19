@@ -21,6 +21,6 @@ public interface ICustomerHelper
     /// </summary>
     /// <param name="userId">userId.</param>
     /// <returns>If user found with the userId then It will return model otherwise null.</returns>
-    Task<CustomerIndex> UserLoginAsync(UserLoginModel modal);
+    Task<UserViewModel> UserLoginAsync(UserLoginModel modal);
 
 }

@@ -11,14 +11,14 @@
                         <!-- Username or Email -->
                         <div class="mb-3 ">
                             <label for="usernameEmail" class="form-label">Username or Email</label>
-                            <input type="text" class="form-control" id="usernameEmail" name="usernameEmail" placeholder="Enter username or email" value="sohan">
+                            <input type="text" class="form-control" id="usernameEmail" name="usernameEmail" placeholder="Enter username or email">
                         </div>
 
                         <!-- Password -->
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
                             <div class="input-group">
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" value="123456">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" >
                                 <button tabindex="-1" class="btn btn-secondary" type="button" id="toggleButton"><i class="fa-solid fa-eye me-2"></i></button>
                             </div>
                         </div>
@@ -43,8 +43,7 @@
 <script asp-name="user" at="Foot"></script>
 
 <script at="Foot">
- 
-    var toggleButton = document.getElementById('toggleButton');
+     var toggleButton = document.getElementById('toggleButton');
       var icon = toggleButton.querySelector('i');
     toggleButton.addEventListener('click', function () {
         var password = document.getElementById('password');

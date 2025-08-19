@@ -6,8 +6,6 @@
 bin/
 obj/
 
-# Temporary user-specific files
-*.user
 *.suo
 *.db
 *.log

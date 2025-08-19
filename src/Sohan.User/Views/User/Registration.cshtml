@@ -1,0 +1,92 @@
+﻿@model Sohan.User.ViewModels.UserViewModel
+
+@{
+    ViewData["Title"] = "Sohan User";
+}
+<div class="container mb-5">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title text-center mb-4">Register</h3>
+                    <form id="registrationForm">
+                        @Html.AntiForgeryToken()
+                        <!-- Name -->
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" >
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" >
+                        </div>
+
+                        <!-- Username -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Choose a username" >
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" >
+                                <button tabindex="-1" class="btn btn-secondary" type="button" id="passwordtoggleButton"><i class="fa-solid fa-eye me-2"></i></button>
+                            </div>
+                        </div>
+
+
+                        <!-- Confirm Password -->
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Enter " Confirm password" >
+                                <button tabindex="-1" class="btn btn-secondary" type="button" id="confirmtoggleButton"><i class="fa-solid fa-eye me-2"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </div>
+                    </form>
+                    <p class="text-center mt-3">Already have an account? <a href="~/userlogin">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script asp-name="Registration-Validation" at="Foot"></script>
+<script asp-name="user" at="Foot"></script>
+<script at="Foot">
+    var toggleButtons = [
+        { button: "passwordtoggleButton", input: "password" },
+        { button: "confirmtoggleButton", input: "confirmPassword" }
+    ];
+
+    toggleButtons.forEach(({ button, input }) => {
+        var inputElement = document.getElementById(input);
+        var buttonElement = document.getElementById(button);
+        var icon = buttonElement.querySelector('i');
+
+        buttonElement.addEventListener("click", function () {
+            var type = inputElement.getAttribute("type") === "text" ? "password" : "text";
+            inputElement.setAttribute("type", type); // Corrected from `Attribute` to `setAttribute`
+
+            if (type === "text") {
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+    });
+</script>
+
+

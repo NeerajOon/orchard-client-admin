@@ -10,5 +10,3 @@ public class UserViewModel
 	public string? Password { get; set; }
 	public string? ConfirmPassword { get; set; }
 }
-
-

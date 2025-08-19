@@ -1,28 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-	  <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-	  <LangVersion>12.0</LangVersion>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+		<LangVersion>12.0</LangVersion>
+		<NoWarn>$(NoWarn);CS8618;CS8601;CS8603</NoWarn>
+	</PropertyGroup>
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
-
+	
 	<ItemGroup>
-	  <PackageReference Include="OrchardCore" Version="2.1.7" />
-	  <PackageReference Include="OrchardCore.Admin.Abstractions" Version="2.1.7" />
-	  <PackageReference Include="OrchardCore.ContentManagement" Version="2.1.7" />
-	  <PackageReference Include="OrchardCore.DisplayManagement" Version="2.1.7" />
-	  <PackageReference Include="OrchardCore.Module.Targets" Version="2.1.7" />
-	  <PackageReference Include="OrchardCore.Recipes" Version="2.1.7" />
-	  <PackageReference Include="OrchardCore.Recipes.Abstractions" Version="2.1.7" />
-	  <PackageReference Include="OrchardCore.Recipes.Core" Version="2.1.7" />
-	  <PackageReference Include="OrchardCore.ResourceManagement" Version="2.1.7" />
-	  <PackageReference Include="OrchardCore.Users" Version="2.1.7" />
-	  <PackageReference Include="OrchardCore.Users.Core" Version="2.1.7" />
-  </ItemGroup>
+		<PackageReference Include="OrchardCore" Version="2.1.7" />
+		<PackageReference Include="OrchardCore.Admin.Abstractions" Version="2.1.7" />
+		<PackageReference Include="OrchardCore.ContentManagement" Version="2.1.7" />
+		<PackageReference Include="OrchardCore.DisplayManagement" Version="2.1.7" />
+		<PackageReference Include="OrchardCore.Module.Targets" Version="2.1.7" />
+		<PackageReference Include="OrchardCore.Recipes" Version="2.1.7" />
+		<PackageReference Include="OrchardCore.Recipes.Abstractions" Version="2.1.7" />
+		<PackageReference Include="OrchardCore.Recipes.Core" Version="2.1.7" />
+		<PackageReference Include="OrchardCore.ResourceManagement" Version="2.1.7" />
+		<PackageReference Include="OrchardCore.Users" Version="2.1.7" />
+		<PackageReference Include="OrchardCore.Users.Core" Version="2.1.7" />
+	</ItemGroup>
 
 </Project>
